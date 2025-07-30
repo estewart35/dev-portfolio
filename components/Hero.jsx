@@ -23,10 +23,10 @@ const Hero = () => {
           <h2 className="font-good-times leading-tight text-muted-foreground text-xl md:text-lg md-lg:text-xl mb-8 md:mb-6 md-lg:mb-8">
             Full-Stack Web Developer
           </h2>
-          <p className="leading-6 text-balance mb-8">
-            Passionate full-stack developer focused on clean design, usability,
-            and efficient solutions. Detail-oriented, always learning, and
-            driven to build thoughtful, user-friendly web experiences.
+          <p className="leading-6 text-pretty mb-8">
+            I'm a 25-year-old developer based in Ogden, Utah. I'm all
+            about clean design, building things that are easy to use, and
+            writing code that makes sense.
           </p>
           <div className="flex items-center justify-center md:justify-start space-x-6">
             <Button variant="outline" className="font-good-times" asChild>

@@ -15,16 +15,16 @@ const Header = () => {
       className="flex h-12 justify-between items-center"
     >
       <Link className="shrink-0" href="/">
-        <img src="/logo.svg" alt="Logo" className="h-12" />
+        <img src="/logos/ethanstewart_logo.svg" alt="Logo" className="h-12" />
       </Link>
       <div className="flex h-5 items-center">
         <Nav className="hidden md:flex md:me-4" />
         <Separator
           orientation="vertical"
-          className="border-1 hidden md:block md:me-4"
+          className="hidden md:block md:me-4"
         />
         <ThemeToggle className="me-4 md:me-0" />
-        <Separator orientation="vertical" className="border-1 md:hidden me-4" />
+        <Separator orientation="vertical" className="md:hidden me-4" />
         <MobileMenu className="inline-flex md:hidden" />
       </div>
     </Container>

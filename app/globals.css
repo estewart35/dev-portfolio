@@ -45,6 +45,7 @@
   --font-nimbus-sans: var(--font-nimbus-sans);
   --color-logo-blue: var(--logo-blue);
   --color-logo-gray: var(--logo-gray);
+  --breakpoint-xs: 32rem;
   --breakpoint-md-lg: 56.25rem;
 }
 
