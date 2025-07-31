@@ -33,7 +33,8 @@ const workArticles = [
     },
     timeline: "Sep 2023 - May 2024",
     location: "Ogden, UT",
-    heading: "Weber State University Projects",
+    heading:
+      "Wildcat Microfund & Sunridge HOA — Weber State University Projects",
     subHeading: "Software Engineer Intern",
     listItems: [
       "Contributed to two live, full-stack web applications supporting real-world clients and developing features including ERD diagrams, C# models, database seeding, and responsive UI using Razor Pages and Bootstrap.",

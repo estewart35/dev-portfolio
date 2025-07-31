@@ -22,7 +22,9 @@ const ExperienceArticle = ({
           <MapPin className="size-4 me-1.5" /> {location}
         </span>
       </p>
-      <h2 className="text-lg font-bold text-logo-blue">{heading}</h2>
+      <h2 className="text-lg font-bold text-logo-blue text-pretty">
+        {heading}
+      </h2>
       <p className="text-muted-foreground text-pretty">{subHeading}</p>
       <ul className="text-sm text-primary mt-2 mb-3 ml-5 list-disc [&>li]:mt-1">
         {listItems.map((item, i) => (
