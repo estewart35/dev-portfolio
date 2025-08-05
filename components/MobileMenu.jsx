@@ -14,14 +14,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Menu, SquareArrowOutUpRight, Mail } from "lucide-react";
-import Github from "@/components/icons/Github";
-import Linkedin from "@/components/icons/Linkedin";
+import { Menu, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -65,7 +58,8 @@ function MobileMenu({ className }) {
                   asChild
                   className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
                 >
-                  <Link href="#skills">Skills</Link>
+                  <button disabled>Skills</button>
+                  {/* <Link href="#skills">Skills</Link> */}
                 </NavigationMenuLink>
               </SheetClose>
             </NavigationMenuItem>
@@ -75,7 +69,8 @@ function MobileMenu({ className }) {
                   asChild
                   className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
                 >
-                  <Link href="#projects">Projects</Link>
+                  <button disabled>Projects</button>
+                  {/* <Link href="#projects">Projects</Link> */}
                 </NavigationMenuLink>
               </SheetClose>
             </NavigationMenuItem>

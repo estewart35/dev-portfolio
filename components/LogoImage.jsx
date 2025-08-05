@@ -14,9 +14,9 @@ const LogoImage = ({ logo }) => {
         src={
           typeof logo.src === "string"
             ? logo.src
-            : theme === "dark"
-            ? logo.src.dark
-            : logo.src.light
+            : theme === "light"
+            ? logo.src.light
+            : logo.src.dark
         }
         width="64"
         height="64"
