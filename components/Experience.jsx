@@ -79,8 +79,24 @@ const educationArticles = [
       "Bachelor of Science in Computer Science, Minor in Web Development",
     listItems: [
       "Graduated magna cum laude with a 3.88 GPA.",
-      "Web Development Minor with emphasis on building full-stack applications and designing effective user interfaces.",
+      "Awarded a Certificate of Proficiency in Programming Essentials for achieving top marks in core courses including Data Structures & Algorithms, HTML/CSS, and more.",
       "Competed on the university's Rocket League esports team — because every computer science major is a gamer at heart. :)",
+    ],
+  },
+  {
+    logo: {
+      src: "/logos/codetosuccess_logo.png",
+      alt: "Code to Success Logo",
+      spacing: "p-2.5",
+    },
+    timeline: "May 2016 - Aug 2016",
+    location: "Ogden, UT",
+    heading: "Code to Success Utah — Summer Coding Immersion Program",
+    subHeading: "Certificate of Completion",
+    listItems: [
+      "Selected for an intensive 6-week coding program for high school students, focusing on advanced programming concepts.",
+      "Worked in an immersive, enterprise-style environment that was collaborative and emphasized industry best practices.",
+      "Developed a personal website from scratch using Ruby on Rails, implementing both front-end and back-end functionality.",
     ],
   },
 ];

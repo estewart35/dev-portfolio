@@ -26,7 +26,11 @@ const ExperienceArticle = ({
         {heading}
       </h2>
       <p className="text-muted-foreground text-pretty">{subHeading}</p>
-      <ul className="text-sm text-primary mt-2 mb-3 ml-5 list-disc [&>li]:mt-1">
+      <ul
+        className={`text-sm text-primary mt-2 ${
+          badges ? "mb-3" : "mb-0"
+        } ml-5 list-disc [&>li]:mt-1`}
+      >
         {listItems.map((item, i) => (
           <li key={i} className="text-pretty">
             {item}
