@@ -27,22 +27,11 @@ const Nav = ({ className }) => {
             <Link href="#experience">Experience</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
-                <button disabled>Skills</button>
-                {/* <Link href="#skills">Skills</Link> */}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Still working on this — check back later!</p>
-          </TooltipContent>
-        </Tooltip>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="#skills">Skills</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
         <Tooltip>
           <TooltipTrigger asChild>
             <NavigationMenuItem>

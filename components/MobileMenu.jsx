@@ -58,8 +58,7 @@ function MobileMenu({ className }) {
                   asChild
                   className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
                 >
-                  <button disabled>Skills</button>
-                  {/* <Link href="#skills">Skills</Link> */}
+                  <Link href="#skills">Skills</Link>
                 </NavigationMenuLink>
               </SheetClose>
             </NavigationMenuItem>

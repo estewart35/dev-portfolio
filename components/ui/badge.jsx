@@ -11,6 +11,8 @@ const badgeVariants = cva(
       variant: {
         default:
           "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+        logo:
+          "bg-logo-blue border border-primary-foreground text-primary-foreground dark:text-foreground [a&]:hover:bg-logo-blue/90",
         secondary:
           "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
         destructive:
@@ -23,7 +25,7 @@ const badgeVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
 function Badge({
   className,
