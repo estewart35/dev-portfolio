@@ -3,7 +3,6 @@ import Nav from "./Nav";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import { Separator } from "./ui/separator";
-import { Button } from "./ui/button";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
     <Container
       as="header"
       size="lg"
-      bgClassName="py-6"
+      bgClassName="py-5 sticky top-0 z-50 bg-background/50 backdrop-blur-md"
       className="flex h-12 justify-between items-center"
     >
       <Link className="shrink-0" href="/">
@@ -19,10 +18,7 @@ const Header = () => {
       </Link>
       <div className="flex h-5 items-center">
         <Nav className="hidden md:flex md:me-4" />
-        <Separator
-          orientation="vertical"
-          className="hidden md:block md:me-4"
-        />
+        <Separator orientation="vertical" className="hidden md:block md:me-4" />
         <ThemeToggle className="me-4 md:me-0" />
         <Separator orientation="vertical" className="md:hidden me-4" />
         <MobileMenu className="inline-flex md:hidden" />

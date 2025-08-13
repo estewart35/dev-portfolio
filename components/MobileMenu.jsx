@@ -30,7 +30,7 @@ function MobileMenu({ className }) {
         <SheetHeader className="mb-8">
           <SheetTitle className="sr-only">Menu</SheetTitle>
         </SheetHeader>
-        <NavigationMenu className="block max-w-full flex-0">
+        <NavigationMenu orientation="vertical" className="block max-w-full flex-0">
           <NavigationMenuList className="block space-y-8">
             <NavigationMenuItem>
               <SheetClose asChild>

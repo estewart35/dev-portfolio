@@ -19,12 +19,12 @@ const ThemeToggle = ({ className }) => {
           variant="ghost"
           size="icon"
           className={`p-5 md:p-0 ${className}`}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
-          {theme === "dark" ? (
-            <Moon className="size-6 md:size-5" />
-          ) : (
+          {theme === "light" ? (
             <Sun className="size-6 md:size-5" />
+          ) : (
+            <Moon className="size-6 md:size-5" />
           )}
           <span className="sr-only">Toggle theme</span>
         </Button>

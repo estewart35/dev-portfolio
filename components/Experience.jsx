@@ -7,7 +7,13 @@ import { workData, educationData } from "@/lib/data";
 
 const Experience = () => {
   return (
-    <Container id="experience" as="section" size="lg" className="py-8">
+    <Container
+      id="experience"
+      as="section"
+      size="lg"
+      bgClassName="scroll-mt-22"
+      className="py-8"
+    >
       <Tabs defaultValue="work" className="">
         <TabsList>
           <TabsTrigger value="work">Work</TabsTrigger>

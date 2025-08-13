@@ -13,7 +13,13 @@ import {
 
 const Hero = () => {
   return (
-    <Container id="home" as="section" size="lg" className="py-8">
+    <Container
+      id="home"
+      as="section"
+      size="lg"
+      bgClassName="scroll-mt-22"
+      className="py-8"
+    >
       <div className="grid grid-cols-12 gap-y-6 gap-x-0 md:items-center">
         <div className="col-span-12 md:col-span-7 text-center md:text-start">
           <div className="mb-4 text-lg">Hey, I'm</div>
@@ -24,9 +30,9 @@ const Hero = () => {
             Full-Stack Web Developer
           </h2>
           <p className="leading-6 text-pretty mb-8">
-            I'm a 25-year-old developer based in Ogden, Utah. I'm all
-            about clean design, building things that are easy to use, and
-            writing code that makes sense.
+            I'm a 25-year-old developer based in Ogden, Utah. I'm all about
+            clean design, building things that are easy to use, and writing code
+            that makes sense.
           </p>
           <div className="flex items-center justify-center md:justify-start space-x-6">
             <Button variant="outline" className="font-good-times" asChild>

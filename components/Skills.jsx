@@ -23,7 +23,13 @@ const Skills = () => {
   };
 
   return (
-    <Container id="skills" as="section" size="lg" className="py-8">
+    <Container
+      id="skills"
+      as="section"
+      size="lg"
+      bgClassName="scroll-mt-22"
+      className="py-8"
+    >
       <div className="flex flex-col xs:flex-row gap-y-6 items-center xs:justify-between mb-5">
         <h2 className="font-good-times text-2xl">Skills</h2>
         <FilterButtons
