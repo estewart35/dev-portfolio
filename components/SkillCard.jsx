@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import SkillIcon from "./SkillIcon";
+import SkillIcon from "@/components/SkillIcon";
 
 const SkillCard = ({ skill }) => {
   return (

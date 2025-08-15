@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import Container from "@/components/Container";
-import SkillCard from "./SkillCard";
+import SkillCard from "@/components/SkillCard";
 import { skillsData } from "@/lib/data";
-import FilterButtons from "./FilterButtons";
+import FilterButtons from "@/components/FilterButtons";
 
 const filterButtons = [
   { value: "all", label: "All" },

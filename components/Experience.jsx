@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import ExperienceArticle from "./ExperienceArticle";
+import ExperienceArticle from "@/components/ExperienceArticle";
 import { workData, educationData } from "@/lib/data";
 
 const Experience = () => {

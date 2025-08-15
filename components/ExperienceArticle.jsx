@@ -1,6 +1,6 @@
 import { Calendar, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import LogoImage from "./LogoImage";
+import LogoImage from "@/components/LogoImage";
 
 const ExperienceArticle = ({
   logo,

@@ -1,9 +1,9 @@
-import Container from "./Container";
-import Nav from "./Nav";
-import ThemeToggle from "./ThemeToggle";
+import Container from "@/components/Container";
+import Nav from "@/components/Nav";
+import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
-import { Separator } from "./ui/separator";
-import MobileMenu from "./MobileMenu";
+import { Separator } from "@/components/ui/separator";
+import MobileMenu from "@/components/MobileMenu";
 
 const Header = () => {
   return (
