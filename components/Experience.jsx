@@ -26,13 +26,13 @@ const Experience = () => {
           />
           <CardContent>
             <TabsContent value="work">
-              {workData.map((article, i) => (
-                <ExperienceArticle key={i} {...article} />
+              {workData.map((article) => (
+                <ExperienceArticle key={article.heading} article={article} />
               ))}
             </TabsContent>
             <TabsContent value="education">
-              {educationData.map((article, i) => (
-                <ExperienceArticle key={i} {...article} />
+              {educationData.map((article) => (
+                <ExperienceArticle key={article.heading} article={article} />
               ))}
             </TabsContent>
           </CardContent>

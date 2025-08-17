@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const goodTimes = localFont({
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

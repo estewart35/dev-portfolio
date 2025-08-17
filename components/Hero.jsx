@@ -1,15 +1,6 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import Container from "@/components/Container";
-import { SquareArrowOutUpRight, Mail } from "lucide-react";
-import Github from "@/components/icons/Github";
-import Linkedin from "@/components/icons/Linkedin";
 import Image from "next/image";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import Container from "@/components/Container";
+import MediaButtons from "@/components/MediaButtons";
 
 const Hero = () => {
   return (
@@ -34,50 +25,7 @@ const Hero = () => {
             clean design, building things that are easy to use, and writing code
             that makes sense.
           </p>
-          <div className="flex items-center justify-center md:justify-start space-x-6">
-            <Button variant="outline" className="font-good-times" asChild>
-              <Link href="/resume.pdf" target="_blank">
-                <SquareArrowOutUpRight className="size-5" />
-                Resume
-              </Link>
-            </Button>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" asChild>
-                  <Link href="https://github.com/estewart35">
-                    <Github className="size-5" />
-                  </Link>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>GitHub</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" asChild>
-                  <Link href="https://www.linkedin.com/in/ethangstewart/">
-                    <Linkedin className="size-5" />
-                  </Link>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>LinkedIn</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" asChild>
-                  <Link href="mailto:ethan.stewart35@gmail.com">
-                    <Mail className="size-5" />
-                  </Link>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Email</p>
-              </TooltipContent>
-            </Tooltip>
-          </div>
+          <MediaButtons withResume />
         </div>
         <div className="col-span-12 md:col-span-5 order-first md:order-none mx-auto">
           <Image

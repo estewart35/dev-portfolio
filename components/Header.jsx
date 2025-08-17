@@ -14,7 +14,7 @@ const Header = () => {
       className="flex h-12 justify-between items-center"
     >
       <Link className="shrink-0" href="/">
-        <img src="/logos/ethanstewart_logo.svg" alt="Logo" className="h-12" />
+        <img src="/logos/ethanstewart_logo.svg" alt="Ethan Stewart Logo" className="h-12" />
       </Link>
       <div className="flex h-5 items-center">
         <Nav className="hidden md:flex md:me-4" />
