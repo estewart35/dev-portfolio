@@ -7,6 +7,7 @@ const buildDate = new Date().toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
+  timeZone: "America/Denver",
 });
 
 const Footer = () => {
