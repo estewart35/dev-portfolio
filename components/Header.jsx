@@ -13,8 +13,15 @@ const Header = () => {
       bgClassName="py-5 sticky top-0 z-50 bg-background/50 backdrop-blur-md"
       className="flex h-12 justify-between items-center"
     >
-      <Link className="shrink-0" href="/">
-        <img src="/logos/ethanstewart_logo.svg" alt="Ethan Stewart Logo" className="h-12" />
+      <Link
+        className="shrink-0 rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+        href="/"
+      >
+        <img
+          src="/logos/ethanstewart_logo.svg"
+          alt="Ethan Stewart Logo"
+          className="h-14 aspect-square"
+        />
       </Link>
       <div className="flex h-5 items-center">
         <Nav className="hidden md:flex md:me-4" />

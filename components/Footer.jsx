@@ -23,7 +23,7 @@ const Footer = () => {
           Built with{" "}
           <Link
             href="https://nextjs.org/"
-            className="underline underline-offset-3 hover:text-logo-blue"
+            className="underline underline-offset-3 hover:text-logo-blue rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
             target="_blank"
           >
             Next.js
@@ -31,7 +31,7 @@ const Footer = () => {
           ,{" "}
           <Link
             href="https://tailwindcss.com/"
-            className="underline underline-offset-3 hover:text-logo-blue"
+            className="underline underline-offset-3 hover:text-logo-blue rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
             target="_blank"
           >
             Tailwind CSS
@@ -39,11 +39,12 @@ const Footer = () => {
           , and{" "}
           <Link
             href="https://ui.shadcn.com/"
-            className="underline underline-offset-3 hover:text-logo-blue"
+            className="underline underline-offset-3 hover:text-logo-blue rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
             target="_blank"
           >
             Shadcn/ui
           </Link>
+          .
         </div>
         <div>Last Updated: {buildDate}</div>
       </div>

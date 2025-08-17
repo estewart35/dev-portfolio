@@ -8,7 +8,7 @@ const SkillCard = ({ skill }) => {
       <CardContent className="relative flex flex-col xs:flex-row items-center gap-3 px-2.5">
         <SkillIcon icon={skill.icon} />
         <div>
-          <CardTitle className="text-foreground font-normal mb-1 leading-4.5 text-center xs:leading-4 xs:text-start">
+          <CardTitle className="font-normal mb-1 leading-4.5 text-center xs:leading-4 xs:text-start">
             {skill.name}
           </CardTitle>
           <CardDescription className="hidden xs:block text-xs">
