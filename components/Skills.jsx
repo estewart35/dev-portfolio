@@ -18,7 +18,7 @@ const Skills = () => {
     setDisplayedSkills(
       tag === "all"
         ? skillsData
-        : skillsData.filter((skill) => skill.tags?.includes(tag))
+        : skillsData.filter((skill) => skill.filters?.includes(tag))
     );
   };
 

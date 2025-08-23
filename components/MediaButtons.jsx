@@ -25,7 +25,7 @@ const MediaButtons = ({ withResume = false, className }) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="icon" asChild>
-            <Link href="https://github.com/estewart35">
+            <Link href="https://github.com/estewart35" target="_blank">
               <Github className="size-5" />
             </Link>
           </Button>
@@ -37,7 +37,10 @@ const MediaButtons = ({ withResume = false, className }) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="icon" asChild>
-            <Link href="https://www.linkedin.com/in/ethangstewart/">
+            <Link
+              href="https://www.linkedin.com/in/ethangstewart/"
+              target="_blank"
+            >
               <Linkedin className="size-5" />
             </Link>
           </Button>
@@ -49,7 +52,7 @@ const MediaButtons = ({ withResume = false, className }) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline" size="icon" asChild>
-            <Link href="mailto:ethan.stewart35@gmail.com">
+            <Link href="mailto:ethan.stewart35@gmail.com" target="_blank">
               <Mail className="size-5" />
             </Link>
           </Button>

@@ -4,6 +4,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import MobileMenu from "@/components/MobileMenu";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -17,8 +18,10 @@ const Header = () => {
         className="shrink-0 rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
         href="/"
       >
-        <img
+        <Image
           src="/logos/ethanstewart_logo.svg"
+          width="56"
+          height="56"
           alt="Ethan Stewart Logo"
           className="h-14 aspect-square"
         />

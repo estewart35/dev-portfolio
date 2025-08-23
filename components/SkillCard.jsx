@@ -15,9 +15,9 @@ const SkillCard = ({ skill }) => {
             {skill.description}
           </CardDescription>
         </div>
-        {skill.tags?.includes("learning") && (
+        {skill.badgeEmphasis && (
           <Badge variant="logo" className="absolute -right-2 -top-3 rotate-12">
-            Learning
+            {skill.badgeEmphasis}
           </Badge>
         )}
       </CardContent>
