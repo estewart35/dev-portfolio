@@ -15,7 +15,7 @@ const Footer = () => {
     <Container
       as="footer"
       size="lg"
-      className="py-8 flex flex-col sm:flex-row items-center justify-between gap-8"
+      className="pt-9 pb-8 flex flex-col sm:flex-row items-center justify-between gap-8"
     >
       <MediaButtons />
       <div className="text-muted-foreground text-sm text-pretty text-center sm:text-end">
