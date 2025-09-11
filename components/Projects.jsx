@@ -1,18 +1,18 @@
-"use client";
-import { useState } from "react";
+// "use client";
+// import { useState } from "react";
 import Container from "@/components/Container";
 import { projectsData } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+// import { Button } from "@/components/ui/button";
+// import { ChevronDown } from "lucide-react";
+// import {
+//   Collapsible,
+//   CollapsibleContent,
+//   CollapsibleTrigger,
+// } from "@/components/ui/collapsible";
 
 const Projects = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Container
@@ -26,7 +26,14 @@ const Projects = () => {
         <h2 className="font-good-times text-2xl">Projects</h2>
         {/* Add archive button here */}
       </div>
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projectsData.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
+      </div>
+
+      {/* Use this if you want show more/less button  */}
+      {/* <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectsData.slice(0, 2).map((project) => (
             <ProjectCard key={project.name} project={project} />
@@ -49,7 +56,7 @@ const Projects = () => {
             </Button>
           </CollapsibleTrigger>
         </div>
-      </Collapsible>
+      </Collapsible> */}
     </Container>
   );
 };
