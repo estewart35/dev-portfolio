@@ -23,7 +23,7 @@ const ProjectCard = ({ project }) => {
       <Link
         href={project.liveUrl ?? project.githubUrl}
         target="_blank"
-        className="absolute inset-0 z-10 rounded-xl outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+        className="absolute inset-0 z-10 rounded-xl outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] transition-all"
         aria-label={`Open ${project.name}`}
       >
         <span className="sr-only">Open {project.name}</span>

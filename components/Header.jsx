@@ -15,7 +15,7 @@ const Header = () => {
       className="flex h-12 justify-between items-center"
     >
       <Link
-        className="shrink-0 rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+        className="shrink-0 rounded-md outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] transition-all"
         href="/"
       >
         <Image
