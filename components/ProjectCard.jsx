@@ -19,6 +19,16 @@ import {
 const ProjectCard = ({ project }) => {
   return (
     <div className="relative group col-span-1 rounded-xl">
+      {/* Whole card link overlay */}
+      <Link
+        href={project.liveUrl ?? project.githubUrl}
+        target="_blank"
+        className="absolute inset-0 z-10 rounded-xl outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+        aria-label={`Open ${project.name}`}
+      >
+        <span className="sr-only">Open {project.name}</span>
+      </Link>
+
       <Card className="border-2 border-logo-blue pt-0 pb-5 gap-2 overflow-hidden">
         <MockupImage mockup={project.mockup} />
         <CardContent className="px-5">
@@ -67,16 +77,6 @@ const ProjectCard = ({ project }) => {
           </div>
         </CardContent>
       </Card>
-
-      {/* Whole card link overlay */}
-      <Link
-        href={project.liveUrl ?? project.githubUrl}
-        target="_blank"
-        className="absolute inset-0 z-10 rounded-xl"
-        aria-label={`Open ${project.name}`}
-      >
-        <span className="sr-only">Open {project.name}</span>
-      </Link>
     </div>
   );
 };
