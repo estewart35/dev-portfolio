@@ -1,0 +1,62 @@
+import { type ReactNode } from "react";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import "./globals.css";
+
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+const goodTimes = localFont({
+  src: "./fonts/good-times-rg.ttf",
+  variable: "--font-good-times",
+});
+
+const nimbusSans = localFont({
+  src: "./fonts/nimbus-sans-rg.otf",
+  variable: "--font-nimbus-sans",
+});
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  title: "Ethan Stewart | Dev Portfolio",
+  description:
+    "Full-stack web developer portfolio showcasing projects built with React, Django, C#, and more.",
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${goodTimes.variable} ${nimbusSans.variable} antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          // enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+  );
+}
