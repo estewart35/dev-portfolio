@@ -10,6 +10,7 @@ import ProjectCard from "@/components/ProjectCard";
 //   CollapsibleContent,
 //   CollapsibleTrigger,
 // } from "@/components/ui/collapsible";
+// import { cn } from "@/lib/utils";
 
 const ProjectsSection = () => {
   // const [isOpen, setIsOpen] = useState(false);
@@ -49,9 +50,10 @@ const ProjectsSection = () => {
             <Button variant="outline" className="font-good-times">
               {isOpen ? "Show Less" : "Show More"}
               <ChevronDown
-                className={`size-5 transform transition-transform duration-500 ${
+                className={cn(
+                  "size-5 transform transition-transform duration-500",
                   isOpen ? "rotate-180" : "rotate-0"
-                }`}
+                )}
               />
             </Button>
           </CollapsibleTrigger>

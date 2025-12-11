@@ -12,30 +12,27 @@ type NavbarProps = {
   className?: string;
 };
 
+const navLinks = [
+  { href: "#home", text: "Home" },
+  { href: "#experience", text: "Experience" },
+  { href: "#skills", text: "Skills" },
+  { href: "#projects", text: "Projects" },
+];
+
 const Navbar = ({ className }: NavbarProps) => {
   return (
     <NavigationMenu className={className}>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#home">Home</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#experience">Experience</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#skills">Skills</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="#projects">Projects</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+        {navLinks.map((link) => (
+          <NavigationMenuItem key={link.text}>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <Link href={link.href}>{link.text}</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   );

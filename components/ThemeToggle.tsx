@@ -7,6 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 type ThemeToggleProps = {
   className?: string;
@@ -21,7 +22,7 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className={`p-5 md:p-0 ${className}`}
+          className={cn("p-5 md:p-0", className)}
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           <Sun className="dark:hidden size-6 md:size-5" />

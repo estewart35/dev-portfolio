@@ -17,10 +17,18 @@ import {
 import { Menu, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 type MobileMenuProps = {
   className?: string;
 };
+
+const navLinks = [
+  { href: "#home", text: "Home" },
+  { href: "#experience", text: "Experience" },
+  { href: "#skills", text: "Skills" },
+  { href: "#projects", text: "Projects" },
+];
 
 function MobileMenu({ className }: MobileMenuProps) {
   return (
@@ -39,46 +47,21 @@ function MobileMenu({ className }: MobileMenuProps) {
           className="block max-w-full flex-0"
         >
           <NavigationMenuList className="block space-y-8">
-            <NavigationMenuItem>
-              <SheetClose asChild>
-                <NavigationMenuLink
-                  asChild
-                  className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
-                >
-                  <Link href="#home">Home</Link>
-                </NavigationMenuLink>
-              </SheetClose>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <SheetClose asChild>
-                <NavigationMenuLink
-                  asChild
-                  className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
-                >
-                  <Link href="#experience">Experience</Link>
-                </NavigationMenuLink>
-              </SheetClose>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <SheetClose asChild>
-                <NavigationMenuLink
-                  asChild
-                  className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
-                >
-                  <Link href="#skills">Skills</Link>
-                </NavigationMenuLink>
-              </SheetClose>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <SheetClose asChild>
-                <NavigationMenuLink
-                  asChild
-                  className={`${navigationMenuTriggerStyle()} w-full text-lg h-10`}
-                >
-                  <Link href="#projects">Projects</Link>
-                </NavigationMenuLink>
-              </SheetClose>
-            </NavigationMenuItem>
+            {navLinks.map((link) => (
+              <NavigationMenuItem key={link.text}>
+                <SheetClose asChild>
+                  <NavigationMenuLink
+                    asChild
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "w-full text-lg h-10"
+                    )}
+                  >
+                    <Link href={link.href}>{link.text}</Link>
+                  </NavigationMenuLink>
+                </SheetClose>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
         <Separator className="my-3 border-1" />

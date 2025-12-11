@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type Experience } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 type LogoImageProps = {
   logo: Experience["logo"];
@@ -8,7 +9,10 @@ type LogoImageProps = {
 const LogoImage = ({ logo }: LogoImageProps) => {
   return (
     <div
-      className={`${logo.spacing} absolute size-16 aspect-square rounded-full border-2 border-logo-blue bg-accent overflow-hidden left-[33px] sm:left-[69px] top-6.5 xs:top-[2px] -translate-x-1/2`}
+      className={cn(
+        "absolute size-16 aspect-square rounded-full border-2 border-logo-blue bg-accent overflow-hidden left-[33px] sm:left-[69px] top-6.5 xs:top-[2px] -translate-x-1/2",
+        logo.spacing
+      )}
     >
       {typeof logo.src === "string" ? (
         // Same logo same for both themes

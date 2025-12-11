@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -42,7 +43,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${goodTimes.variable} ${nimbusSans.variable} antialiased`}
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          goodTimes.variable,
+          nimbusSans.variable,
+          "antialiased"
+        )}
       >
         <ThemeProvider
           attribute="class"

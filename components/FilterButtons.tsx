@@ -2,6 +2,7 @@
 import { Fragment, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 type FilterButton<T extends string> = {
   value: T;
@@ -24,7 +25,7 @@ const FilterButtons = <T extends string>({
   const [selected, setSelected] = useState<T>(defaultSelection);
 
   return (
-    <div className={`flex h-5 items-center gap-4 ${className}`}>
+    <div className={cn("flex h-5 items-center gap-4", className)}>
       {buttons.map((btn) => (
         <Fragment key={btn.value}>
           <Button

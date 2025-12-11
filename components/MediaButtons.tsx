@@ -8,6 +8,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 type MediaButtonsProps = {
   withResume?: boolean;
@@ -17,7 +18,10 @@ type MediaButtonsProps = {
 const MediaButtons = ({ withResume = false, className }: MediaButtonsProps) => {
   return (
     <div
-      className={`flex items-center justify-center md:justify-start space-x-6 ${className}`}
+      className={cn(
+        "flex items-center justify-center md:justify-start space-x-6",
+        className
+      )}
     >
       {withResume && (
         <Button variant="outline" className="font-good-times" asChild>

@@ -1,4 +1,5 @@
 import { type ReactNode, type ElementType } from "react";
+import { cn } from "@/lib/utils";
 
 type ContainerSize = keyof typeof maxWidthMap;
 
@@ -32,7 +33,7 @@ const Container = ({
 
   return (
     <Wrapper id={id} className={bgClassName}>
-      <div className={`${maxWidthClass} mx-auto ${className}`}>{children}</div>
+      <div className={cn("mx-auto", maxWidthClass, className)}>{children}</div>
     </Wrapper>
   );
 };

@@ -2,6 +2,7 @@ import { Calendar, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import LogoImage from "@/components/LogoImage";
 import { type Experience } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 type ExperienceArticleProps = {
   article: Experience;
@@ -26,9 +27,10 @@ const ExperienceArticle = ({ article }: ExperienceArticleProps) => {
         {article.subHeading}
       </div>
       <ul
-        className={`text-sm text-primary mt-2 ${
+        className={cn(
+          "text-sm text-primary mt-2 ml-5 list-disc [&>li]:mt-1",
           article.badges ? "mb-3" : "mb-0"
-        } ml-5 list-disc [&>li]:mt-1`}
+        )}
       >
         {article.listItems.map((item) => (
           <li key={item} className="text-pretty">
