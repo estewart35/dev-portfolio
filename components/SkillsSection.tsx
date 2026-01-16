@@ -5,6 +5,7 @@ import SkillCard from "@/components/SkillCard";
 import { skills } from "@/lib/data";
 import { type Skill } from "@/lib/types";
 import FilterButtons from "@/components/FilterButtons";
+import { motion, AnimatePresence, type MotionProps } from "motion/react";
 
 const filterButtons = [
   { value: "all", label: "All" },
@@ -13,6 +14,11 @@ const filterButtons = [
 ] as const;
 
 type FilterValue = (typeof filterButtons)[number]["value"];
+
+const cardTransition: MotionProps["transition"] = {
+  duration: 0.3,
+  ease: "easeInOut",
+};
 
 const SkillsSection = () => {
   const [displayedSkills, setDisplayedSkills] = useState<Skill[]>(skills);
@@ -42,9 +48,20 @@ const SkillsSection = () => {
         />
       </div>
       <div className="grid grid-cols-3 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {displayedSkills.map((skill) => (
-          <SkillCard key={skill.name} skill={skill} />
-        ))}
+        <AnimatePresence mode="popLayout">
+          {displayedSkills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={cardTransition}
+              layout
+            >
+              <SkillCard skill={skill} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </Container>
   );
