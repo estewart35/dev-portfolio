@@ -1,6 +1,6 @@
 import { type Experience, type Skill, type Project } from "@/lib/types";
 
-export const workExperience:Experience[] = [
+export const workExperience: Experience[] = [
   {
     logo: {
       src: "/logos/familysearch_logo.png",
@@ -97,7 +97,7 @@ export const educationExperience: Experience[] = [
   },
 ];
 
-export const skills:Skill[] = [
+export const skills: Skill[] = [
   {
     icon: {
       code: "devicon:html5",
@@ -172,13 +172,22 @@ export const skills:Skill[] = [
     badgeEmphasis: "Learning",
     filters: ["frontend", "backend"],
   },
+  // {
+  //   icon: {
+  //     code: "logos:claude-icon",
+  //     bgColor: "bg-[#D97757]/25",
+  //   },
+  //   name: "Claude Code",
+  //   description: "AI Developer Tool",
+  //   badgeEmphasis: "Learning",
+  // },
   {
     icon: {
-      code: "logos:claude-icon",
-      bgColor: "bg-[#D97757]/25",
+      code: "devicon-plain:cursor",
+      bgColor: "bg-[#000000]/25",
     },
-    name: "Claude Code",
-    description: "AI Developer Tool",
+    name: "Cursor",
+    description: "AI Code Editor",
     badgeEmphasis: "Learning",
   },
   // {
@@ -258,7 +267,7 @@ export const skills:Skill[] = [
   //   },
 ];
 
-export const projects:Project[] = [
+export const projects: Project[] = [
   {
     mockup: {
       src: {
