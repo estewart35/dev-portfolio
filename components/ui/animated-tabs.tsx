@@ -8,6 +8,7 @@ import {
   type AnimatePresenceProps,
 } from "motion/react";
 import { cn } from "@/lib/utils";
+import { useAnimatedPill } from "@/hooks/useAnimatedPill";
 
 type TabsAnimationContextValue = {
   activeValue: string;
@@ -57,74 +58,23 @@ function AnimatedTabs({
   );
 }
 
-type TabPosition = {
-  left: number;
-  width: number;
-};
-
 function AnimatedTabsList({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.List>) {
   const context = React.useContext(TabsAnimationContext);
-  const [tabPositions, setTabPositions] = React.useState<
-    Record<string, TabPosition>
-  >({});
-  const [shouldAnimate, setShouldAnimate] = React.useState(false);
 
   if (!context) {
     throw new Error("AnimatedTabsList must be used within AnimatedTabs");
   }
 
   const { activeValue, listRef } = context;
-  const activePosition = tabPositions[activeValue];
-
-  // Calculate tab positions whenever tabs or layout changes
-  React.useEffect(() => {
-    if (!listRef.current) return;
-
-    const updatePositions = (): void => {
-      const tabElements =
-        listRef.current?.querySelectorAll<HTMLElement>('[role="tab"]');
-      if (!tabElements || !listRef.current) return;
-
-      const listRect = listRef.current.getBoundingClientRect();
-      const positions: Record<string, TabPosition> = {};
-
-      tabElements.forEach((tab) => {
-        const tabRect = tab.getBoundingClientRect();
-        const tabValue = tab.getAttribute("data-value");
-
-        if (tabValue) {
-          positions[tabValue] = {
-            left: tabRect.left - listRect.left,
-            width: tabRect.width,
-          };
-        }
-      });
-
-      setTabPositions(positions);
-    };
-
-    // Small delay to ensure tabs are rendered
-    const timeoutId = setTimeout(() => {
-      updatePositions();
-      setShouldAnimate(true);
-    }, 50);
-
-    const observer = new ResizeObserver(() => {
-      setShouldAnimate(false);
-      updatePositions();
-      setTimeout(() => setShouldAnimate(true), 100);
-    });
-
-    observer.observe(listRef.current);
-
-    return () => {
-      clearTimeout(timeoutId);
-      observer.disconnect();
-    };
-  }, [listRef, props.children]);
+  const pill = useAnimatedPill({
+    activeValue,
+    externalRef: listRef,
+    itemSelector: '[role="tab"]',
+    itemAttribute: "data-value",
+  });
 
   return (
     <TabsPrimitive.List
@@ -136,17 +86,17 @@ function AnimatedTabsList({
       )}
       {...props}
     >
-      {activePosition && (
+      {pill.activePosition && (
         <motion.div
           layoutId="activeTabPill"
           className="absolute h-[calc(100%-6px)] bg-input/78 dark:bg-input/30 rounded-md border-2 border-logo-blue shadow-sm pointer-events-none"
           initial={false}
           animate={{
-            left: activePosition.left,
-            width: activePosition.width,
+            left: pill.activePosition.left,
+            width: pill.activePosition.width,
           }}
           transition={
-            shouldAnimate
+            pill.shouldAnimate
               ? { type: "tween", ease: "easeOut", duration: 0.3 }
               : { duration: 0 }
           }
