@@ -1,4 +1,6 @@
 "use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -15,6 +17,13 @@ type ThemeToggleProps = {
 
 const ThemeToggle = ({ className }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
+  const [spin, setSpin] = useState(false);
+
+  const handleToggle = () => {
+    setSpin(true);
+    setTheme(theme === "light" ? "dark" : "light");
+    setTimeout(() => setSpin(false), 500);
+  };
 
   return (
     <Tooltip>
@@ -23,10 +32,20 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
           variant="ghost"
           size="icon"
           className={cn("p-5 md:p-0", className)}
-          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          onClick={handleToggle}
         >
-          <Sun className="dark:hidden size-6 md:size-5" />
-          <Moon className="hidden dark:block size-6 md:size-5" />
+          <Sun
+            className={cn(
+              "dark:hidden size-6 md:size-5",
+              spin && "animate-[halfSpinRight_500ms_ease-out]"
+            )}
+          />
+          <Moon
+            className={cn(
+              "hidden dark:block size-6 md:size-5",
+              spin && "animate-[halfSpinLeft_500ms_ease-out]"
+            )}
+          />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </TooltipTrigger>
