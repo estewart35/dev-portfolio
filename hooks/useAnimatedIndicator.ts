@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef, RefObject } from "react";
 
-type PillPosition = {
+type IndicatorPosition = {
   left: number;
   width: number;
 };
 
-type UseAnimatedPillOptions<T extends HTMLElement> = {
+type UseAnimatedIndicatorOptions<T extends HTMLElement> = {
   activeValue: string;
   externalRef?: RefObject<T | null>;
   itemSelector?: string;
@@ -13,14 +13,14 @@ type UseAnimatedPillOptions<T extends HTMLElement> = {
   delay?: number;
 };
 
-export function useAnimatedPill<T extends HTMLElement = HTMLElement>({
+export function useAnimatedIndicator<T extends HTMLElement = HTMLElement>({
   activeValue,
   externalRef,
   itemSelector = '[role="tab"]',
   itemAttribute = "data-value",
   delay = 50,
-}: UseAnimatedPillOptions<T>) {
-  const [positions, setPositions] = useState<Record<string, PillPosition>>({});
+}: UseAnimatedIndicatorOptions<T>) {
+  const [positions, setPositions] = useState<Record<string, IndicatorPosition>>({});
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   const internalRef = useRef<T | null>(null);
@@ -34,7 +34,7 @@ export function useAnimatedPill<T extends HTMLElement = HTMLElement>({
       if (!items || !ref.current) return;
 
       const containerRect = ref.current.getBoundingClientRect();
-      const newPositions: Record<string, PillPosition> = {};
+      const newPositions: Record<string, IndicatorPosition> = {};
 
       items.forEach((item) => {
         const itemRect = item.getBoundingClientRect();
