@@ -8,7 +8,7 @@ import {
   type AnimatePresenceProps,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { useAnimatedPill } from "@/hooks/useAnimatedPill";
+import { useAnimatedIndicator } from "@/hooks/useAnimatedIndicator";
 
 type TabsAnimationContextValue = {
   activeValue: string;
@@ -69,7 +69,7 @@ function AnimatedTabsList({
   }
 
   const { activeValue, listRef } = context;
-  const pill = useAnimatedPill({
+  const indicator = useAnimatedIndicator({
     activeValue,
     externalRef: listRef,
     itemSelector: '[role="tab"]',
@@ -86,17 +86,17 @@ function AnimatedTabsList({
       )}
       {...props}
     >
-      {pill.activePosition && (
+      {indicator.activePosition && (
         <motion.div
-          layoutId="activeTabPill"
+          layoutId="activeTabIndicator"
           className="absolute h-[calc(100%-6px)] bg-input/78 dark:bg-input/30 rounded-md border-2 border-logo-blue shadow-sm pointer-events-none"
           initial={false}
           animate={{
-            left: pill.activePosition.left,
-            width: pill.activePosition.width,
+            left: indicator.activePosition.left,
+            width: indicator.activePosition.width,
           }}
           transition={
-            pill.shouldAnimate
+            indicator.shouldAnimate
               ? { type: "tween", ease: "easeOut", duration: 0.3 }
               : { duration: 0 }
           }
@@ -119,7 +119,7 @@ function AnimatedTabsTrigger({
       value={value}
       className={cn(
         "focus-visible:ring-ring/50 relative z-10 inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border-2 border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 cursor-pointer",
-        "data-[state=active]:text-accent-foreground text-muted-foreground",
+        "data-[state=active]:text-accent-foreground hover:text-accent-foreground text-muted-foreground",
         className
       )}
       {...props}
