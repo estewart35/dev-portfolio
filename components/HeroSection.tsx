@@ -18,12 +18,12 @@ const HeroSection = () => {
             Ethan Stewart
           </h1>
           <h2 className="font-good-times leading-tight text-muted-foreground text-xl md:text-lg md-lg:text-xl mb-8 md:mb-6 md-lg:mb-8">
-            Full-Stack Web Developer
+            Frontend Engineer (Full-Stack)
           </h2>
           <p className="leading-6 text-pretty mb-8">
-            I&apos;m a 25-year-old developer based in Ogden, Utah. I&apos;m all about
-            clean design, building things that are easy to use, and writing code
-            that makes sense.
+            I&apos;m a 25-year-old developer based in Ogden, Utah. I specialize
+            in React frontend development and enjoy building clean, interactive,
+            user-friendly experiences with a strong attention to detail.
           </p>
           <MediaButtons withResume />
         </div>
